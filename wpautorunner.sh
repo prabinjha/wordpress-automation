@@ -2,6 +2,7 @@
 
 sudo apt-get update -y
 #sudo apt-get upgrade -y
+rm /var/www/html/index.html
 sudo apt-get install apache2 apache2-utils -y
 sudo systemctl enable apache2
 sudo systemctl start apache2
@@ -26,7 +27,6 @@ sudo mv wordpress/* /var/www/html/
 sudo chown -R www-data:www-data /var/www/html/
 sudo chmod -R 755 /var/www/html/
 #### Start mysql and set root password
-rm /var/www/html/index.html
 systemctl enable mysql
 systemctl start mysql
 
